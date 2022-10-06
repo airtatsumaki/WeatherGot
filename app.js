@@ -47,4 +47,4 @@ app.listen(3000, () => {
 });
 
 // weather app api call
-//https://api.openweathermap.org/data/2.5/weather?q={CITY-NAME}&appid={APP_ID}
+//https://api.openweathermap.org/data/2.5/weather?q={CITY-NAME}&appid={APP_ID}&units=metric
