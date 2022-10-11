@@ -20,6 +20,14 @@ app.use(express.json());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+//port setting
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, () => console.log("Server is running on port " + process.env.PORT));
+
+
 app.get("/", (req,res) => {
   res.sendFile(__dirname + "/index.html");
 });
@@ -39,11 +47,6 @@ app.post("/", async (req, res) => {
     res.write("OPPS! Something went wrong. Error code: " + error.response.statusCode + ". Try again.");
     res.send();
   }
-});
-
-app.listen(3000, () => {
-  console.log("Server is running!")
-  //console.log(process.env.APP_ID);
 });
 
 // weather app api call
