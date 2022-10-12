@@ -39,7 +39,7 @@ app.post("/", async (req, res) => {
     const data = await got(url).json();
     //needed for cities with special characters.
     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-    res.write("<h1>The current weather condition in " + String(data.name) + " is " + parseInt(data.main.temp) + "<sup>o</sup>, " + String(data.weather[0].description).toLowerCase() + "</h1>");
+    res.write("<h1>The current weather condition in " + String(data.name) + " is " + parseInt(data.main.temp) + "<sup>o</sup>C, " + String(data.weather[0].description).toLowerCase() + "</h1>");
     res.write("<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png' style='width: 200px;'/>");
     res.send();
   }
