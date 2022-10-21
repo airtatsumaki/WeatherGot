@@ -7,7 +7,6 @@
 import express from 'express';
 import got from "got";
 import path from 'path';
-import * as http from 'http';
 import {fileURLToPath} from 'url';
 import * as dotenv from 'dotenv';
 dotenv.config();
