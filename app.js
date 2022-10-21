@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
 //port setting
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 3000;
+  port = 8080;
 }
 app.listen(port, () => console.log("Server is running on port " + process.env.PORT));
 
